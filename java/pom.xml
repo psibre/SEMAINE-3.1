@@ -12,6 +12,12 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>gov.nist.math</groupId>
+			<artifactId>Jama</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>jgraph</groupId>
 			<artifactId>jgraph</artifactId>
 			<version>5.13.0.0</version>
@@ -59,6 +65,13 @@
 				<version>0.5</version>
 				<configuration>
 					<artifactItems>
+						<artifactItem>
+							<groupId>gov.nist.math</groupId>
+							<artifactId>Jama</artifactId>
+							<version>1.0.2</version>
+							<packaging>jar</packaging>
+							<downloadUrl>http://math.nist.gov/javanumerics/jama/Jama-1.0.2.jar</downloadUrl>
+						</artifactItem>
 						<artifactItem>
 							<groupId>marytts</groupId>
 							<artifactId>mary-common</artifactId>
