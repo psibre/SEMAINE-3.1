@@ -59,7 +59,11 @@
 	  <target name="tests" depends="build">
 	    <mkdir dir="logs/test-reports"/>
 	    <junit printsummary="on" haltonfailure="no" fork="on" forkmode="once">
+	    	<assertions>
+	    	  <enable/>
+	    	</assertions>
 	    	<classpath>
+	  	        <pathelement location="config/"/>
 	  	        <pathelement location="bin"/>
 	    		<fileset dir="lib" includes="*.jar"/>
 	        </classpath>
