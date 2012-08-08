@@ -47,33 +47,28 @@
 			<version>1.5.2-incubating</version>
 		</dependency>
 
-		<!-- test scope -->
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>test</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>org.apache.xbean</groupId>
 			<artifactId>xbean-spring</artifactId>
 			<version>3.7</version>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>3.0.3.RELEASE</version>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>3.0.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -99,26 +94,26 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<version>1.7</version>
+				<configuration>
+					<resources>
+						<resource>
+							<directory>config</directory>
+						</resource>
+						<resource>
+							<directory>${project.build.sourceDirectory}</directory>
+							<excludes>
+								<exclude>**/*.java</exclude>
+							</excludes>
+						</resource>
+					</resources>
+				</configuration>
 				<executions>
 					<execution>
 						<id>add-configs</id>
-						<phase>generate-test-resources</phase>
+						<phase>generate-resources</phase>
 						<goals>
-							<goal>add-test-resource</goal>
+							<goal>add-resource</goal>
 						</goals>
-						<configuration>
-							<resources>
-								<resource>
-									<directory>config</directory>
-								</resource>
-								<resource>
-									<directory>${project.build.sourceDirectory}</directory>
-									<excludes>
-										<exclude>**/*.java</exclude>
-									</excludes>
-								</resource>
-							</resources>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
