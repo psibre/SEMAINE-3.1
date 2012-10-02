@@ -1,194 +1,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>eu.semaine</groupId>
 	<artifactId>semaine</artifactId>
 	<version>3.2.0-SNAPSHOT</version>
-	<name>SEMAINE API</name>
+	<packaging>pom</packaging>
+
+	<name>SEMAINE API (parent)</name>
+
+	<modules>
+		<module>semaine-api</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>gov.nist.math</groupId>
-			<artifactId>Jama</artifactId>
-			<version>1.0.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>jgraph</groupId>
-			<artifactId>jgraph</artifactId>
-			<version>5.13.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
-		</dependency>
-
-		<dependency>
-			<groupId>marytts</groupId>
-			<artifactId>mary-common</artifactId>
-			<version>4.2.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-all</artifactId>
-			<version>5.4.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.opennlp</groupId>
-			<artifactId>opennlp-tools</artifactId>
-			<version>1.5.1-incubating</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.xbean</groupId>
-			<artifactId>xbean-spring</artifactId>
-			<version>3.7</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>3.0.3.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>3.0.3.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
 	<build>
-		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>src</testSourceDirectory>
-
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<excludes>
-						<exclude>**/*Test.java</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
-				<configuration>
-					<resources>
-						<resource>
-							<directory>config</directory>
-						</resource>
-						<resource>
-							<directory>${project.build.sourceDirectory}</directory>
-							<excludes>
-								<exclude>**/*.java</exclude>
-							</excludes>
-						</resource>
-					</resources>
-				</configuration>
-				<executions>
-					<execution>
-						<id>add-configs</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>add-resource</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>com.savage7.maven.plugins</groupId>
-				<artifactId>maven-external-dependency-plugin</artifactId>
-				<version>0.5</version>
-				<configuration>
-					<artifactItems>
-						<artifactItem>
-							<groupId>gov.nist.math</groupId>
-							<artifactId>Jama</artifactId>
-							<version>1.0.2</version>
-							<packaging>jar</packaging>
-							<downloadUrl>http://math.nist.gov/javanumerics/jama/Jama-1.0.2.jar</downloadUrl>
-						</artifactItem>
-						<artifactItem>
-							<groupId>marytts</groupId>
-							<artifactId>mary-common</artifactId>
-							<version>4.2.0</version>
-							<packaging>jar</packaging>
-							<downloadUrl>file://${basedir}/lib/mary-common.jar</downloadUrl>
-						</artifactItem>
-					</artifactItems>
-				</configuration>
-				<executions>
-					<execution>
-						<id>clean-external-dependencies</id>
-						<phase>clean</phase>
-						<goals>
-							<goal>clean-external</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>resolve-install-external-dependencies</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>resolve-external</goal>
-							<goal>install-external</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>deploy-external-dependencies</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy-external</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<finalName>${project.artifactId}</finalName>
-					<appendAssemblyId>false</appendAssemblyId>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
+				<!--This plugin's configuration is used to store Eclipse m2e settings
 					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
