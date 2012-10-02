@@ -82,38 +82,7 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-					<excludes>
-						<exclude>**/*Test.java</exclude>
-					</excludes>
 				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
-				<configuration>
-					<resources>
-						<resource>
-							<directory>config</directory>
-						</resource>
-						<resource>
-							<directory>${project.build.sourceDirectory}</directory>
-							<excludes>
-								<exclude>**/*.java</exclude>
-							</excludes>
-						</resource>
-					</resources>
-				</configuration>
-				<executions>
-					<execution>
-						<id>add-configs</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>add-resource</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 
 			<plugin>
