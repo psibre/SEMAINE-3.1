@@ -13,6 +13,7 @@
 		<module>semaine-api</module>
 		<module>semaine-common</module>
 		<module>semaine-mary</module>
+		<module>semaine-dialogue</module>
 	</modules>
 
 	<properties>
