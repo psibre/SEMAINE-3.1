@@ -18,9 +18,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>gov.nist.math</groupId>
-			<artifactId>Jama</artifactId>
-			<version>1.0.2</version>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>semaine-common</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
@@ -30,21 +30,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
-		</dependency>
-
-		<dependency>
 			<groupId>marytts</groupId>
 			<artifactId>mary-common</artifactId>
 			<version>4.2.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-all</artifactId>
-			<version>5.4.1</version>
 		</dependency>
 
 		<dependency>
