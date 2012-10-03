@@ -30,12 +30,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>jgraph</groupId>
-			<artifactId>jgraph</artifactId>
-			<version>5.13.0.0</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.opennlp</groupId>
 			<artifactId>opennlp-tools</artifactId>
 			<version>1.5.1-incubating</version>
