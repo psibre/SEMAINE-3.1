@@ -24,15 +24,15 @@
 		</dependency>
 
 		<dependency>
-			<groupId>jgraph</groupId>
-			<artifactId>jgraph</artifactId>
-			<version>5.13.0.0</version>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>semaine-mary</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>marytts</groupId>
-			<artifactId>mary-common</artifactId>
-			<version>4.2.0</version>
+			<groupId>jgraph</groupId>
+			<artifactId>jgraph</artifactId>
+			<version>5.13.0.0</version>
 		</dependency>
 
 		<dependency>
