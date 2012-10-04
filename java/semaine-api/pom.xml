@@ -12,10 +12,6 @@
 	<artifactId>semaine-api</artifactId>
 	<name>SEMAINE API (module)</name>
 
-	<properties>
-		<project.repositoryUrl>${basedir}/../lib</project.repositoryUrl>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>

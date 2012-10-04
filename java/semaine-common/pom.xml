@@ -11,6 +11,10 @@
 	<artifactId>semaine-common</artifactId>
 	<name>SEMAINE Common</name>
 
+	<properties>
+		<project.repositoryUrl>${basedir}/../lib</project.repositoryUrl>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>gov.nist.math</groupId>
