@@ -14,6 +14,7 @@ public class MaryTest {
 
 	@Test
 	public void canProcessTextToSpeech() throws Exception {
+		System.setProperty("log4j.logger.marytts", "INFO,stderr");
 		MaryInterface mary = new LocalMaryInterface();
 		mary.setVoice(new Config().getName());
 		AudioInputStream audio = mary.generateAudio("Hello world");
