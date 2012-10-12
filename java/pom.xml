@@ -47,12 +47,6 @@
 			</dependency>
 
 			<dependency>
-				<groupId>marytts</groupId>
-				<artifactId>mary-common</artifactId>
-				<version>4.2.0</version>
-			</dependency>
-
-			<dependency>
 				<groupId>org.apache.activemq</groupId>
 				<artifactId>activemq-all</artifactId>
 				<version>5.4.1</version>
